@@ -1,0 +1,26 @@
+
+
+<div class="tt">
+  <h3>Your Tasks({{task.length}})</h3>
+  <mat-form-field class="example-full-width">
+    <mat-label>Search tasks...</mat-label>
+    <input matInput [(ngModel)]="searchText">
+  </mat-form-field>  
+  <table  class="table">
+   <thead>
+     <tr>
+       <th>Name</th>
+       <th>Confirm</th>
+       <th>Delete</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let data of task | filterPipe:'taskName':searchText">
+       <td>{{data.taskName}}</td>
+       <td> <mat-checkbox class="example-margin">Check me!</mat-checkbox></td>
+       <td><button mat-raised-button color="accent" (click)="deleteItem(data)">Delete</button></td>
+     </tr>
+   </tbody>
+   
+ </table>
+ </div>

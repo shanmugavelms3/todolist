@@ -1,0 +1,10 @@
+<form class="example-form" [formGroup]="todoform">
+    <mat-form-field class="example-full-width">
+      <mat-label>Create a task</mat-label>
+      <input matInput formControlName="taskName" >
+      
+    </mat-form-field>
+   
+
+    <button (click)="addTask()"  mat-raised-button color="accent" type="submit" >Submit</button>
+</form>
